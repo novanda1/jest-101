@@ -1,10 +1,9 @@
-/**
- * @author Novanda Ahsan
- * @param text string that need to is-palindrom
- * @param feedback boolean - return boolean if true - default false
- * @returns feedback | boolean
- */
-const palindrom = (text: string, feedback: boolean = false) => {
+type PalindromType = {
+  text: string;
+  feedback?: boolean;
+};
+
+const palindrom = ({ text, feedback }: PalindromType) => {
   /** fast way */
   // const textReverse = text
   //   .split("") // make it to array
@@ -22,7 +21,8 @@ const palindrom = (text: string, feedback: boolean = false) => {
   const reversedText = reversedTextArray.join("");
 
   /**
-   * return either use feedback or boolean if feedback true
+   *  either return boolean or feedback if feedback is true
+   *  default return booelan
    */
   if (feedback)
     return text === reversedText
