@@ -1,15 +1,17 @@
 import palindrom from "./palindrom";
 
-test("should  be true", () => {
-  expect(palindrom("kodok")).toBe(true);
-  expect(palindrom("pixip")).toBe(true);
-  expect(palindrom("ili")).toBe(true);
-  expect(palindrom("a")).toBe(true);
-  expect(palindrom("")).toBe(true);
+test("should be true", () => {
+  expect(palindrom({ text: "eye" })).toBe(true);
+  expect(palindrom({ text: "eve" })).toBe(true);
+  expect(palindrom({ text: "num" })).toBe(true);
+  expect(palindrom({ text: "mom" })).toBe(true);
+  expect(palindrom({ text: "hannah" })).toBe(true);
 });
 
-test("should  be false", () => {
-  expect(palindrom("bayi")).toBe(false);
-  expect(palindrom("minum")).toBe(false);
-  expect(palindrom("susu")).toBe(false);
+test("should be false", () => {
+  expect(palindrom({ text: "ear" })).toBe(false);
+  expect(palindrom({ text: "adam" })).toBe(false);
+  expect(palindrom({ text: "string" })).toBe(false);
+  expect(palindrom({ text: "mommy" })).toBe(false);
+  expect(palindrom({ text: "fatimah" })).toBe(false);
 });
